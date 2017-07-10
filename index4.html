@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<!-- Start of HTML -->
+<html>
+
+<!-- Start of Head -->
+<head>
+
+<!-- Start of Title -->
+<title>Nested function to pass the outer function values</title>
+
+<!-- Start of CSS Styling -->
+<style>
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+#desc {
+    width: 1300px;
+    height: 300px;
+    overflow: scroll;
+}
+p {
+	font-size:25px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-style:italic;
+	color:rgb(148, 101, 44);	
+	word-spacing:8px;
+	letter-spacing: 1px;
+	text-align:justify;
+	padding:0 10px 0 10px;
+}
+h1 {
+	font-family:"MS Serif", "New York", serif;
+	font-style:italic;
+	color:#f4363d;	
+}
+h2 {
+	font-family:"MS Serif", "New York", serif;
+	font-style:italic;
+	color:#fff;	
+}
+
+#main-wrapper{
+	background-image:url(background.jpg);
+}
+
+
+</style>
+<!-- End of CSS Styling -->
+
+</head>
+<!-- End Head -->
+
+<!-- Start Body -->
+<body>
+<div id="main-wrapper">
+
+	<!-- Start Header -->
+		<header style="padding:10px; border:1px solid !important;">        
+        <!-- Start Navbar -->
+        <div>         
+            <nav>  
+            	<ul>            
+                  <li><a href="#">LOGO</a></li>
+                  <li><a href="#">Home </a></li>
+                  <li><a href="#">About us </a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">Contact Us</a></li>
+              	</ul>
+            </nav>
+        </div> 
+        <!--End Navbar -->           
+            
+		</header>
+        <!-- End Header -->
+        <br>
+        
+        <!-- Page Heading -->
+        <div>
+        <h1 style="text-align:center"><u>Nested function to pass the outer function values</u></h1>
+		</div>
+        <p id="demo"></p>
+        <!-- Javascript Start -->
+	
+<script>
+         var addTo=function(outer)
+         {
+         	 var add=function(inner)
+         	 {
+         	 	return outer+inner;
+         	 }
+         	  return add;
+         };
+
+         var addthree=new addTo(3);
+          console.dir(addthree);
+         
+ document.getElementById('demo').innerHTML='Result is '+addthree(4);
+
+	  </script>
+		<!-- Javascript End -->
+</body>
+</html>
